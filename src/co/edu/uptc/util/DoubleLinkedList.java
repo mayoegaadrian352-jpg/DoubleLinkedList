@@ -1,5 +1,6 @@
 package co.edu.uptc.util;
 
+import java.lang.runtime.TemplateRuntime;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +18,7 @@ public class DoubleLinkedList<T> implements List<T>{
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<T> iterator() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'iterator'");
     }
@@ -47,7 +48,7 @@ public class DoubleLinkedList<T> implements List<T>{
     }
 
     @Override
-    public boolean add(Object e) {
+    public boolean add(T e) {
 
         Node<T> newNode = new Node(e);
         if (head!=null) {
@@ -80,13 +81,13 @@ public class DoubleLinkedList<T> implements List<T>{
     }
 
     @Override
-    public Object set(int index, Object element) {
+    public T set(int index, T element) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'set'");
     }
 
     @Override
-    public void add(int index, Object element) {
+    public void add(int index, T element) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
@@ -128,37 +129,37 @@ public class DoubleLinkedList<T> implements List<T>{
     }
 
     @Override
-    public Object[] toArray(Object[] a) {
+    public <T> T[] toArray(T[] a) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'toArray'");
     }
 
     @Override
-    public boolean containsAll(Collection c) {
+    public boolean containsAll(Collection<?> c) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'containsAll'");
     }
 
     @Override
-    public boolean addAll(Collection c) {
+    public boolean addAll(Collection<? extends T> c) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addAll'");
     }
 
     @Override
-    public boolean addAll(int index, Collection c) {
+    public boolean addAll(int index, Collection<? extends T> c) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addAll'");
     }
 
     @Override
-    public boolean removeAll(Collection c) {
+    public boolean removeAll(Collection<?> c) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'removeAll'");
     }
 
     @Override
-    public boolean retainAll(Collection c) {
+    public boolean retainAll(Collection<?> c) {
         boolean hasChanged = false;
         Iterator<T> it = this.iterator();
         while (it.hasNext()) {
